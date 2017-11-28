@@ -72,6 +72,9 @@ public:
         
         //shift array
         for(int i = currentSize; i > index; i--){
+            if(i == 0){
+                array[i] = array[i];
+            }
             array[i] = array[i-1];
         }
         array[index] = newValue;
@@ -135,7 +138,7 @@ public:
 
 int main(int argc, const char * argv[]){
     ArrayList* list = new ArrayList();
-   
+    
     for(int i = 0; i < 10; i++){
         list->add(i);
     }
@@ -159,6 +162,4 @@ int main(int argc, const char * argv[]){
     cout<<endl;
     list->print();
 }
-
-
 
